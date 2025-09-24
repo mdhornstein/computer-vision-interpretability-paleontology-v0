@@ -51,7 +51,7 @@ fossil-interpretability/
 1. Clone this repo  
    ```bash
    git clone https://github.com/your-username/computer-vision-interpretability-paleontology-v0
-   cd fossil-interpretability
+   cd computer-vision-interpretability-paleontology-v0
    ```
 
 2. Install requirements
