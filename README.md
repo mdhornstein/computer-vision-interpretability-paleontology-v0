@@ -26,6 +26,7 @@ Each method overlays a **heatmap** on fossil images to show what the model uses 
 
 ## Repository Structure
 
+```
 fossil-interpretability/
 │
 ├── notebooks/
@@ -41,6 +42,7 @@ fossil-interpretability/
 │
 ├── README.md
 └── requirements.txt
+```
 
 
 ---
