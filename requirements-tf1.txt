@@ -1,0 +1,7 @@
+tensorflow==1.13.2
+tensorflow-hub==0.6.0
+opencv-python==4.1.0.25
+numpy==1.16.4
+scipy==1.2.1
+jupyter==1.0.0
+ipykernel==5.1.0
