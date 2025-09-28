@@ -1,0 +1,9 @@
+services:
+  tf1:
+    build: .
+    platform: linux/amd64       # force amd64 emulation
+    user: "${UID}:${GID}"        # Run container as your host user
+    volumes:
+      - .:/workspace            # mount current folder
+    working_dir: /workspace
+    command: tail -f /dev/null  # keep container alive
