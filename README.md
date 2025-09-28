@@ -8,7 +8,44 @@ This section describes how to load pre-trained TensorFlow 1.13 model weights and
 - Model checkpoint files from TF 1.13 training
 - Apple Silicon compatibility (uses community TensorFlow build without AVX requirements)
 
-### Input Requirements
+### Setup Instructions
+
+#### 1. Download TensorFlow 1.13 Community Build
+
+From the root directory of the repository:
+```bash
+./download_wheel_v1.sh
+```
+This script downloads a community-built TensorFlow 1.13.1 wheel that works on Apple Silicon without AVX instruction requirements.
+
+
+#### 2. Build the Docker Image
+
+```bash
+./docker-build.sh
+```
+The Docker image includes:
+
+* Python 3.6 (compatible with TF 1.13)
+* Community TensorFlow 1.13.1 wheel (downloaded in step 1)
+* TensorFlow Slim models from the r1.13.0 tag (cloned from GitHub in the Dockerfile) 
+*  Required dependencies (h5py, numpy, etc.)
+
+#### 3. Start the Container
+
+```bash
+./docker-up.sh -d
+```
+This runs the container in detached mode, keeping it running in the background.
+
+#### 4. Access the Container
+```bash
+docker compose exec tf1 bash
+```
+
+### Running the Conversion
+
+#### 1. Input Requirements
 The script expects your TensorFlow 1.13 checkpoint files to be located at:
 
 ```
@@ -17,6 +54,23 @@ models/fid_classification/tf1/
 ├── model.ckpt-60.index
 └── model.ckpt-60.meta
 ```
+
+#### 2. Run the Conversion Script 
+Once inside the container, run the conversion script:
+```bash
+python notebooks/03_convert_weights_to_tf2.py
+```
+
+#### 3. Output 
+The conversion script creates a modern TensorFlow SavedModel at: 
+```
+models/fid_classification/tf1_from_community_allow_train/1/
+├── saved_model.pb
+└── variables/
+    ├── variables.data-00000-of-00001
+    └── variables.index
+```
+
 
 We run TF 1.13 in a Docker image to pull together all dependencies automatically. Here are the steps to build and run the image. From the root directory of the repo, 
 
