@@ -2,14 +2,21 @@
 
 We run TF 1.13 in a Docker image to pull together all dependencies automatically. Here are the steps to build and run the image. From the root directory of the repo, 
 
+### Donwload a community build of TensorFlow 1.13 
+
+1. Run `./download_wheel_v1.sh` to download the wheel with the community build, which will be used by the Docker container. 
 1. Run `./docker-build.sh`
-2. Run `./docker-up.sh -d` to run the image in a deatched way.
-3. Run `docker compose exec tf1 bash` to conneect to the running detached image.
+1. Run `./docker-up.sh -d` to run the image in a deatched way.
+1. Run `docker compose exec tf1 bash` to conneect to the running detached image.
 
 Run the following
 ```
 python notebooks/03_convert_weights_to_tf2.py
 ``` 
+This script assumes that the model is in `models/fid_classification/tf1`, in the following form: 
+```
+model.ckpt-60.data-00000-of-00001  model.ckpt-60.index	model.ckpt-60.meta
+```
 
 # Fossil Interpretability
 
