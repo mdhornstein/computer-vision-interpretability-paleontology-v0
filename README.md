@@ -1,3 +1,16 @@
+## Loading the TF 1.13 weights and saving them in a modern format. 
+
+We run TF 1.13 in a Docker image to pull together all dependencies automatically. Here are the steps to build and run the image. From the root directory of the repo, 
+
+1. Run `./docker-build.sh`
+2. Run `./docker-up.sh -d` to run the image in a deatched way.
+3. Run `docker compose exec tf1 bash` to conneect to the running detached image.
+
+Run the following
+```
+python notebooks/03_convert_weights_to_tf2.py
+``` 
+
 # Fossil Interpretability
 
 This repo demonstrates **machine learning interpretability** applied to fossil image classification.  
