@@ -1,5 +1,23 @@
 ## Loading the TF 1.13 weights and saving them in a modern format. 
 
+This section describes how to load pre-trained TensorFlow 1.13 model weights and convert them to a format compatible with modern TensorFlow versions. The process uses a Docker container to manage TF 1.13 dependencies and ensure compatibility.
+
+### Prerequisites
+
+- Docker and Docker Compose installed
+- Model checkpoint files from TF 1.13 training
+- Apple Silicon compatibility (uses community TensorFlow build without AVX requirements)
+
+### Input Requirements
+The script expects your TensorFlow 1.13 checkpoint files to be located at:
+
+```
+models/fid_classification/tf1/
+├── model.ckpt-60.data-00000-of-00001
+├── model.ckpt-60.index
+└── model.ckpt-60.meta
+```
+
 We run TF 1.13 in a Docker image to pull together all dependencies automatically. Here are the steps to build and run the image. From the root directory of the repo, 
 
 ### Donwload a community build of TensorFlow 1.13 
