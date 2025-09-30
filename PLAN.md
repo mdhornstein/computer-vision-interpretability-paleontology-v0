@@ -7,27 +7,7 @@ Build a minimal but useful repository for **machine learning interpretability** 
 - Interpretability: Grad-CAM, saliency maps, occlusion sensitivity, integrated gradients.  
 - Evaluation: compare interpretability maps against paleontological features.  
 
----
-
-## 🗂 Repo Structure  
-
-```
-fossil-interpretability/
-  PLAN.md
-  README.md
-  .gitignore
-  data/               # ignored by git
-    train/
-    val/
-  notebooks/
-    00_prepare_dataset.ipynb
-    01_train_model.ipynb
-    02_interpret_model.ipynb
-  src/                # optional Python modules
-    models.py
-    utils.py
-  outputs/            # small visualizations, can be committed
-```
+## 
 
 ---
 
