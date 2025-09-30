@@ -140,18 +140,4 @@ fossil-interpretability/
 ---
 
 ## Quickstart
-1. Clone this repo  
-   ```bash
-   git clone https://github.com/your-username/computer-vision-interpretability-paleontology-v0
-   cd computer-vision-interpretability-paleontology-v0
-   ```
-
-2. Install requirements
-```
-pip install -r requirements.txt
-```
-
-3. Run the first notebook to train a classifier:
-```
-jupyter notebook notebooks/01_train_classifier.ipynb
-```
+todo: write a quickstart guie
